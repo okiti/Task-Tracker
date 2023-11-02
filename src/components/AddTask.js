@@ -22,24 +22,24 @@ const AddTask = ({ onAdd }) => {
     }
 
     return (
-        <form className="add-form" onSubmit={onSubmit}>
+        <form className="add-form" onSubmit={onSubmit} autoComplete="off">
             <div className="form-control">
-                <label>Task</label>
-                <input type="text" placeholder="Add Task"
+                <label htmlFor="text">Task</label>
+                <input type="text" id="text" autoFocus placeholder="Add Task"
                     value={text}
                     onChange={(e) => setText(e.target.value)} />
             </div>
 
             <div className="form-control">
-                <label>Day & Time</label>
-                <input type="text" placeholder="Add Day & Time"
+                <label htmlFor="day">Day & Time</label>
+                <input type="text" id="day" placeholder="Add Day & Time"
                     value={day}
                     onChange={(e) => setDay(e.target.value)} />
             </div>
 
             <div className="form-control form-control-check">
-                <label>Set Reminder</label>
-                <input type="checkbox"
+                <label htmlFor="reminder">Set Reminder</label>
+                <input type="checkbox" id="reminder"
                     checked={reminder}
                     value={reminder}
                     onChange={(e) => setReminder(e.currentTarget.checked)} />

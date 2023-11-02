@@ -93,8 +93,8 @@ const App = () => {
   return (
     <Router>
       <div className="container">
-        <Header onAdd={() => setShowAddTask(!showAddTask)}
-          showAdd={showAddTask} />
+        <Header onClickAdd={() => setShowAddTask(!showAddTask)}
+          AddFormShown={showAddTask} />
         <Routes>
 
           <Route path="/" element={
