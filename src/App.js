@@ -52,6 +52,10 @@ const App = () => {
     setTasks(tasks.map((task) => task.id === id ? { ...task, reminder: !task.reminder } : task))
   }
 
+  const closeAddTaskform = async () => {
+    setShowAddTask(!showAddTask)
+  }
+
   return (
     <Router>
       <div className="container">
@@ -61,7 +65,7 @@ const App = () => {
 
           <Route path="/" element={
             <>
-              {showAddTask && <AddTask onAdd={addTask} />}
+              {showAddTask && <AddTask onAdd={addTask} onSave={closeAddTaskform} />}
               {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : "No task available"}
             </>
           } />
